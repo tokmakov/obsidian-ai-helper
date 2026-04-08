@@ -416,7 +416,8 @@ export class AIChatView extends ItemView {
 
             new Notice(`✅ Создана заметка: ${fileName}`);
         } catch (error) {
-            new Notice(`❌ Ошибка создания заметки: ${error.message}`);
+            const message = error instanceof Error ? error.message : String(error);
+            new Notice(`❌ Ошибка создания заметки: ${message}`);
         }
     }
 
