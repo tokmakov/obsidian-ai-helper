@@ -180,10 +180,6 @@
     background: var(--background-primary-alt);
 }
 
-.ai-chat-message-user .ai-chat-message-body p {
-    white-space: pre-wrap;
-}
-
 /* Сообщение ассистента */
 .ai-chat-message-assistant {
     background: var(--background-primary-alt);

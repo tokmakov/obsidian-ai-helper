@@ -175,17 +175,16 @@ export class AIChatView extends ItemView {
 
         const msgBody = msgEl.createDiv({ cls: 'ai-chat-message-body' });
 
+        await MarkdownRenderer.render(
+            this.app,
+            message.content,
+            msgBody,
+            '',
+            this
+        );
+
         if (message.role === 'assistant') {
-            await MarkdownRenderer.render(
-                this.app,
-                message.content,
-                msgBody,
-                '',
-                this
-            );
             this.renderMessageActions(msgEl, message);
-        } else {
-            msgBody.createEl('p', { text: message.content });
         }
 
         this.scrollToBottom();
